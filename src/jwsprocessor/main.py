@@ -61,7 +61,7 @@ This assistant consists on four steps:
         ip = gtk.Label(self.intro_msg)
         self.append_page(ip)       
         self.set_page_type(ip, gtk.ASSISTANT_PAGE_INTRO)
-        self.set_page_title(ip, _("jwsProcess assistant"))
+        self.set_page_title(ip, _("jwsProcessor assistant"))
         self.set_page_complete(ip, True)
         self.intro_page = ip
         # Page 1
@@ -107,7 +107,7 @@ This assistant consists on four steps:
         self.restart_button.connect("clicked", self._restart_clicked_cb)
         self.restart_button.show_all()
         # Configure window
-        self.set_title("jwsProcess")
+        self.set_title("jwsProcessor")
         self.set_forward_page_func(self._fwd_page_func)
         self.show_all()
         self.connect("delete-event", self._close_cb)

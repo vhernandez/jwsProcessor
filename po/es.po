@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-20 13:52+0200\n"
+"POT-Creation-Date: 2009-04-22 20:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Víctor M. Hernández-Rocamora <victor.hr@gmail.com>\n"
 "Language-Team: Español <victor.hr@gmail.com>\n"
@@ -224,8 +224,9 @@ msgstr ""
 "#4 Guardado de los resultados\n"
 
 #: ../src/jwsprocessor/main.py:64
-msgid "jwsProcess assistant"
-msgstr "Asistente jwsProcess"
+#, fuzzy
+msgid "jwsProcessor assistant"
+msgstr "Asistente jwsProcessor"
 
 #: ../src/jwsprocessor/main.py:71
 msgid "#1 - Select spectra"
