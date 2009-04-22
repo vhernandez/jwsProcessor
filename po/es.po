@@ -326,12 +326,12 @@ msgstr "Factor de corrección:"
 #: ../src/jwsprocessor/smoothing_selection.py:119
 #: ../src/jwsprocessor/smoothing_selection.py:281
 msgid "Smoothing type:"
-msgstr "Tipo de smoothing"
+msgstr "Tipo de smoothing:"
 
 #: ../src/jwsprocessor/options_page.py:84
 #: ../src/jwsprocessor/smoothing_selection.py:123
 msgid "Smoothing level(m):"
-msgstr "Tipo de smoothing (m)"
+msgstr "Nivel de smoothing (m)"
 
 #: ../src/jwsprocessor/options_page.py:87
 #: ../src/jwsprocessor/smoothing_selection.py:127
@@ -345,7 +345,7 @@ msgstr "Opciones de smoothing"
 
 #: ../src/jwsprocessor/options_page.py:103
 msgid "Blank:"
-msgstr "Blanco"
+msgstr "Blanco:"
 
 #: ../src/jwsprocessor/options_page.py:195
 msgid "Open spectrum..."
