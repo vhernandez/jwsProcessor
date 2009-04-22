@@ -71,8 +71,9 @@ env['BIN_PATH'] = '${DESTDIR}${PREFIX}/bin'
 env['SHARE_PATH'] = '${DESTDIR}${PREFIX}/share/jwsprocessor'
 env['DOC_PATH'] = '${DESTDIR}${PREFIX}/share/doc/jwsprocessor'
 env['ETC_PATH'] = '${DESTDIR}${ETCDIR}/jwsprocessor'
-env['PIXMAPS_PATH'] = '${DESTDIR}${PREFIX}/share/pixmaps/jwsprocessor'
+env['PIXMAPS_PATH'] = '${DESTDIR}${PREFIX}/share/pixmaps'
 env['LOCALE_PATH'] = '${DESTDIR}${PREFIX}/share/locale'
+
 
 CONFIG_PATHS = dict(
 	site_packages = 'SITE_PACKAGE_PATH',

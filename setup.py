@@ -64,7 +64,7 @@ for dirpath, dirnames, filenames in os.walk('share/locale'):
             mo_catalog.append( (modir, [mofile,]) )
         
         
-data_files = [('pixmaps', ['pixmaps/jwsprocessor.svg']),
+data_files = [('pixmaps', ['pixmaps/jwsprocessor.svg', 'pixmaps/jwsprocessor.png']),
               ('etc', ['etc/debugpath.cfg']),
               ('doc', ['README', 'AUTHORS', 'LICENSE', 'ChangeLog']), 
               ('bin', ['bin/jwsprocessor.py', 'bin/this_is_a_repository']),
