@@ -14,6 +14,8 @@ import distutils.dir_util
 for base,folders,filenames in os.walk('.'):
 	if '.svn' in base:
 		continue
+    if '.git' in base:
+        continue
 	for ext in CLEAN:
 		for filename in glob.glob(os.path.join(base, ext)):
 			print "removing "+filename+"..."
