@@ -1,0 +1,15 @@
+#encoding: utf-8
+
+Import('env', 'install', 'install_recursive', 'win32')
+import glob
+
+#for filename in glob.glob('*.png'):
+#	install('${PIXMAPS_PATH}', filename, 0644)
+
+for filename in glob.glob('*.svg'):
+	install('${PIXMAPS_PATH}', filename, 0644)
+
+if win32:
+	for filename in glob.glob('*.ico'):
+		install('${PIXMAPS_PATH}', filename, 0644)
+

@@ -1,0 +1,8 @@
+#encoding: utf-8
+
+Import('env', 'install', 'install_recursive')
+import glob
+
+for filename in glob.glob('*.py'):
+	install('${SITE_PACKAGE_PATH}/jwsprocessor', filename, 0644)
+

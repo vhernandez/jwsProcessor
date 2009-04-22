@@ -1,0 +1,11 @@
+# List of source files containing translatable strings.
+
+src/jwsprocessor/fc_calculator.py
+src/jwsprocessor/jws_filechooser.py
+src/jwsprocessor/jws_processing.py
+src/jwsprocessor/main.py
+src/jwsprocessor/options_page.py
+src/jwsprocessor/process_form.py
+src/jwsprocessor/save_options_page.py
+src/jwsprocessor/selection_page.py
+src/jwsprocessor/smoothing_selection.py

@@ -1,0 +1,34 @@
+include applications/SConscript
+include applications/*.desktop
+
+include bin/jwsprocessor.py
+include bin/this_is_a_repository
+include bin/SConscript
+
+include buildtools/*.py
+
+include etc/SConscript
+include etc/debugpath.cfg
+
+include pixmaps/SConscript
+include pixmaps/*.svg
+
+include po/LINGUAS
+include po/POTFILES.in
+include po/POTFILES
+include po/SConscript
+include po/*.po
+include po/*.pot
+
+include src/SConscript
+include src/jwsprocessor/SConscript
+
+include AUTHORS
+include ChangeLog
+include cleanup
+include LICENSE
+include README
+include msgfmt.py
+include SConstruct
+
+

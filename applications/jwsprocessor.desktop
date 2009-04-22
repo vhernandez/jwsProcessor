@@ -1,0 +1,13 @@
+[Desktop Entry]
+Categories=Education;Science;Chemistry;
+Comment=jwsProcessor Jasco SpectraManager file processor
+Encoding=UTF-8
+Exec=jwsprocessor
+Hidden=false
+Icon=jwsprocessor
+Name=jwsProcessor
+GenericName=jwsProcessor
+Terminal=false
+Type=Application
+MimeType=application/x-jwsprocessor
+

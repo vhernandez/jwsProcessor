@@ -1,0 +1,7 @@
+#encoding: utf-8
+
+Import('env', 'install', 'install_recursive')
+import glob
+
+install('${APPLICATIONS_PATH}', 'jwsprocessor.desktop', 0644)
+

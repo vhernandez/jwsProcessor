@@ -1,0 +1,6 @@
+#encoding: latin-1
+
+Import('env')
+
+env.SConscript('jwsprocessor/SConscript')
+

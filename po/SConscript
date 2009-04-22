@@ -1,0 +1,7 @@
+#encoding: utf-8
+
+Import('env', 'buildinstall_po')
+import glob, os
+
+for fn in glob.glob('*.po'):
+    buildinstall_po( fn, env ) 

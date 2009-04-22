@@ -1,0 +1,459 @@
+# jwsProcessor.
+# Copyright (C) 2009 Víctor M. Hernández-Rocamora
+# This file is distributed under the same license as the jwsProcessor package.
+# Víctor M. Hernández-Rocamora <victor.hr@gmail.com>, 2009.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-04-20 13:52+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Víctor M. Hernández-Rocamora <victor.hr@gmail.com>\n"
+"Language-Team: Español <victor.hr@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/jwsprocessor/fc_calculator.py:46
+#, python-format
+msgid "Concentration (%s):"
+msgstr "Concentración (%s):"
+
+#: ../src/jwsprocessor/fc_calculator.py:50
+msgid "Calculate correction factor"
+msgstr "Calcular factor de corrección"
+
+#: ../src/jwsprocessor/fc_calculator.py:127
+msgid "Concentration (mg/ml):"
+msgstr "Concentración (%s):"
+
+#: ../src/jwsprocessor/fc_calculator.py:159
+msgid "Light path (cm):"
+msgstr "Paso óptico (cm):"
+
+#: ../src/jwsprocessor/fc_calculator.py:169
+msgid "Molecular weight (g/mol):"
+msgstr "Peso molecular (g/mol):"
+
+#: ../src/jwsprocessor/fc_calculator.py:173
+msgid "Residue number:"
+msgstr "Número de residuos:"
+
+#: ../src/jwsprocessor/fc_calculator.py:177
+msgid "<b>Correction factor:</b>"
+msgstr "<b>Factor de correctión:</b>"
+
+#: ../src/jwsprocessor/jws_filechooser.py:16
+msgid "JWS files"
+msgstr "Archivos JWS"
+
+#: ../src/jwsprocessor/jws_filechooser.py:20
+msgid "TXT files"
+msgstr "Archivos TXT"
+
+#: ../src/jwsprocessor/jws_filechooser.py:24
+#: ../src/jwsprocessor/selection_page.py:243
+msgid "Open spectra..."
+msgstr "Abrir espectro(s)..."
+
+#: ../src/jwsprocessor/jws_processing.py:148
+#, python-format
+msgid "Processing file %(#)d of %(##)d..."
+msgstr "Procesando archivo %(#)d de %(##)d..."
+
+#: ../src/jwsprocessor/jws_processing.py:195
+#, python-format
+msgid ""
+"\n"
+"**Loading blank file: %s**\n"
+msgstr ""
+"\n"
+"**Cargando archivo de blanco: %s**\n"
+
+#: ../src/jwsprocessor/jws_processing.py:200
+msgid "Blank could not be loaded"
+msgstr "No se pudo cargar el blanco"
+
+#: ../src/jwsprocessor/jws_processing.py:214
+#, python-format
+msgid ""
+"\n"
+"**Processing %s**\n"
+msgstr ""
+"\n"
+"**Procesando %s**\n"
+
+#: ../src/jwsprocessor/jws_processing.py:222
+#, python-format
+msgid ""
+"\n"
+"Successfully processed %(#)d of %(#)d files\n"
+msgstr ""
+"\n"
+"Procesados correctamente %(#)d de %(#)d archivos\n"
+
+#: ../src/jwsprocessor/jws_processing.py:233
+#, python-format
+msgid ""
+"Error reading jws file %(#)s:\n"
+"%(##)s\n"
+msgstr ""
+"Error leyendo el archivo jws %(#)s:\n"
+"%(##)s\n"
+
+#: ../src/jwsprocessor/jws_processing.py:235
+#, python-format
+msgid ""
+"Invalid file %(#)s:\n"
+"%(##)s\n"
+msgstr ""
+"Archivo inválido %(#)s:\n"
+"%(##)s\n"
+
+#: ../src/jwsprocessor/jws_processing.py:237
+#, python-format
+msgid "Unknown error loading %s\n"
+msgstr "Error desconocido cargando %s\n"
+
+#: ../src/jwsprocessor/jws_processing.py:247
+#, python-format
+msgid "Read data for %d channels\n"
+msgstr "Leer datos de %d canales\n"
+
+#: ../src/jwsprocessor/jws_processing.py:250
+msgid "Error: This file has no channel data\n"
+msgstr "Error: Este archivo no tiene canal de datos\n"
+
+#: ../src/jwsprocessor/jws_processing.py:258
+msgid "Error: Blank has not enough data to be subtracted to input.\n"
+msgstr ""
+"Error: El blanco no tiene datos suficientes para ser substraido al fichero "
+"de entrada.\n"
+
+#: ../src/jwsprocessor/jws_processing.py:260
+msgid "Error: Blank has no data in the wavelength range of input.\n"
+msgstr ""
+"Error: El blanco no tiened datos en el rango de longitudes de onda del "
+"fichero de entrada.\n"
+
+#: ../src/jwsprocessor/jws_processing.py:271
+msgid "Making ellipticity at 260nm 0...\n"
+msgstr "Haciendo la elipticidad a 260 nm 0...\n"
+
+#: ../src/jwsprocessor/jws_processing.py:276
+msgid "Applying smoothing...\n"
+msgstr "Aplicando smoothing...\n"
+
+#: ../src/jwsprocessor/jws_processing.py:302
+msgid "Error: Blank has no channel data.\n"
+msgstr "Error: El blanco no tiene canal de datos\n"
+
+#: ../src/jwsprocessor/jws_processing.py:306
+#, python-format
+msgid ""
+"Error reading blank file %(#)s:\n"
+"%(##)s\n"
+msgstr ""
+"Error leyendo el archivo de blanco %(#)s:\n"
+"%(##)s\n"
+
+#: ../src/jwsprocessor/jws_processing.py:310
+#, python-format
+msgid ""
+"Invalid blank file %(#)s:\n"
+"%(##)s\n"
+msgstr ""
+"Archivo de blanco inválido %(#)s:\n"
+"%(##)s\n"
+
+#: ../src/jwsprocessor/jws_processing.py:312
+msgid "Unknown error loading blank\n"
+msgstr "Error desconocido cargando el blanco\n"
+
+#: ../src/jwsprocessor/jws_processing.py:319
+#, python-format
+msgid ""
+"Information for file %(fn)s\n"
+" -Channels %(chans)d\n"
+" -Points: %(points)d\n"
+" -From %(fp)f to %(lp)f\n"
+" -Data pitch: %(dp)f\n"
+msgstr ""
+"Información del archivo %(fn)s\n"
+" -Canales %(chans)d\n"
+" -Puntos: %(points)d\n"
+" -De %(fp)f a %(lp)f\n"
+" -Data pitch: %(dp)f\n"
+
+#: ../src/jwsprocessor/main.py:28
+msgid ""
+"The selected blank is among the files to be processed. \n"
+"Do you really want to continue?"
+msgstr ""
+"El blanco seleccionado forma parte de los espectros a procesar.\n"
+"¿Desea continuar?"
+
+#: ../src/jwsprocessor/main.py:32
+msgid ""
+"No every file has the same data pitch o data does\n"
+"not always begin at the same wavelength. Do you want to\n"
+"save data with a column for X values for each spectrum?\n"
+msgstr ""
+"Todos los archivos no tienen el mismo data pitch o los\n"
+"datos no empiezan siempre a la misma longitud de onda.\n"
+"¿Guardar los datos con una columna de X para cada espectro?\n"
+
+#: ../src/jwsprocessor/main.py:38
+msgid ""
+"Welcome to jwsProcessor.\n"
+"\n"
+"This assistant consists on four steps:\n"
+"#1 Select the .jws files to be processed\n"
+"#2 Choose the processing options\n"
+"#3 Process of the files\n"
+"#4 Save the results\n"
+msgstr ""
+"Bienvenido a jwsProcessor.\n"
+"\n"
+"Este asistente se compone de 4 pasos:\n"
+"#1 Seleccionar los archivos .jws a procesar\n"
+"#2 Elegir las opciones de procesado\n"
+"#3 Procesamiento de los archivos\n"
+"#4 Guardado de los resultados\n"
+
+#: ../src/jwsprocessor/main.py:64
+msgid "jwsProcess assistant"
+msgstr "Asistente jwsProcess"
+
+#: ../src/jwsprocessor/main.py:71
+msgid "#1 - Select spectra"
+msgstr "#1 - Seleccionar espectros"
+
+#: ../src/jwsprocessor/main.py:80
+msgid "#2 - Processing options"
+msgstr "#2 - Opciones de procesado"
+
+#: ../src/jwsprocessor/main.py:86
+msgid "#3 - Results"
+msgstr "#3 - Resultados"
+
+#: ../src/jwsprocessor/main.py:93
+msgid "#4 - Save results as..."
+msgstr "#4 - Guardar resultados como..."
+
+#. Page 5
+#: ../src/jwsprocessor/main.py:97
+msgid "Saving files..."
+msgstr "Guardando archivos..."
+
+#: ../src/jwsprocessor/main.py:100
+msgid "Summary"
+msgstr "Resumen"
+
+#. Restart assistant button
+#: ../src/jwsprocessor/main.py:104
+msgid "Start again"
+msgstr "Comenzar de nuevo"
+
+#: ../src/jwsprocessor/main.py:164
+#, python-format
+msgid "Successfully processed files: %(#)d out of %(##)d."
+msgstr "Procesados con exito %(#)d de %(##)d espectros."
+
+#: ../src/jwsprocessor/main.py:168
+msgid "Spectra could not be processed!"
+msgstr "¡No se han conseguido procesar los espectros!"
+
+#: ../src/jwsprocessor/main.py:189
+#, python-format
+msgid "Successfully saved files: %(#)d out of %(##)d"
+msgstr "Guardados con éxito %(#)d de %(##)d espectros"
+
+#: ../src/jwsprocessor/main.py:193
+msgid "Results have not been saved."
+msgstr "Los resultados no se han salvado."
+
+#: ../src/jwsprocessor/main.py:215
+msgid "No file could be processed."
+msgstr "Los resultados no han sido guardados."
+
+#: ../src/jwsprocessor/main.py:247
+#, python-format
+msgid "The file %s already exist, do you want to overwrite it?"
+msgstr "El archivo %s ya existe, ¿desea sobreescribirlo?"
+
+#: ../src/jwsprocessor/main.py:295
+msgid "Save results as..."
+msgstr "Guardar resuldados como..."
+
+#: ../src/jwsprocessor/main.py:313
+msgid "Select a folder"
+msgstr "Seleccione una carpeta"
+
+#. Blanco
+#: ../src/jwsprocessor/options_page.py:35
+msgid "Substract blank"
+msgstr "Sustraer blanco"
+
+#. Multiplicar factores de dilución
+#: ../src/jwsprocessor/options_page.py:40
+msgid "Multiply dilution factors"
+msgstr "Multiplicar los factores de dilución"
+
+#. Elipticidad a 260nm
+#: ../src/jwsprocessor/options_page.py:42
+msgid "Substract ellipticity at 260nm"
+msgstr "Sustraer elipticidad a 260nm"
+
+#. Smoothing
+#: ../src/jwsprocessor/options_page.py:44
+msgid "Apply smoothing"
+msgstr "Aplicar smoothing"
+
+#. Factor de corrección
+#: ../src/jwsprocessor/options_page.py:61
+msgid "Apply correction factor"
+msgstr "Aplicar Factor de Corrección"
+
+#: ../src/jwsprocessor/options_page.py:69
+#: ../src/jwsprocessor/options_page.py:77
+msgid "Correction factor:"
+msgstr "Factor de corrección:"
+
+#: ../src/jwsprocessor/options_page.py:81
+#: ../src/jwsprocessor/smoothing_selection.py:119
+#: ../src/jwsprocessor/smoothing_selection.py:281
+msgid "Smoothing type:"
+msgstr "Tipo de smoothing"
+
+#: ../src/jwsprocessor/options_page.py:84
+#: ../src/jwsprocessor/smoothing_selection.py:123
+msgid "Smoothing level(m):"
+msgstr "Tipo de smoothing (m)"
+
+#: ../src/jwsprocessor/options_page.py:87
+#: ../src/jwsprocessor/smoothing_selection.py:127
+#: ../src/jwsprocessor/smoothing_selection.py:289
+msgid "S-G filter order (p):"
+msgstr "Orden del filtro S-G (p):"
+
+#: ../src/jwsprocessor/options_page.py:95
+msgid "Smoothing options"
+msgstr "Opciones de smoothing"
+
+#: ../src/jwsprocessor/options_page.py:103
+msgid "Blank:"
+msgstr "Blanco"
+
+#: ../src/jwsprocessor/options_page.py:195
+msgid "Open spectrum..."
+msgstr "Abrir espectro..."
+
+#: ../src/jwsprocessor/process_form.py:13
+msgid "Processing files..."
+msgstr "Procesando archivos..."
+
+#: ../src/jwsprocessor/save_options_page.py:20
+msgid "Save only one file, with a single X column"
+msgstr "Guardar en un sólo archivo, con una sóla columna de X"
+
+#: ../src/jwsprocessor/save_options_page.py:21
+msgid "Save only one file, with multiple X columns"
+msgstr "Guardar en un sólo archivo, con múltiples columnas de X"
+
+#: ../src/jwsprocessor/save_options_page.py:23
+msgid "Save in multiple files"
+msgstr "Guardar a múltiples archivos"
+
+#: ../src/jwsprocessor/save_options_page.py:25
+msgid "Don't save"
+msgstr "No guardar"
+
+#: ../src/jwsprocessor/save_options_page.py:28
+msgid "Write the name of each column"
+msgstr "Escribir el nombre de cada columna"
+
+#: ../src/jwsprocessor/selection_page.py:33
+msgid "Add spectra"
+msgstr "Añadir espectro(s)"
+
+#: ../src/jwsprocessor/selection_page.py:39
+msgid "Eliminate selected spectra"
+msgstr "Eliminar espectros selccionados"
+
+#: ../src/jwsprocessor/selection_page.py:46
+msgid "Paste dilution data"
+msgstr "Pegar datos de dilución"
+
+#: ../src/jwsprocessor/selection_page.py:53
+msgid "Erase dilution data"
+msgstr "Limpiar datos de dilución"
+
+#: ../src/jwsprocessor/selection_page.py:58
+msgid "Preview"
+msgstr "Vista previa"
+
+#: ../src/jwsprocessor/selection_page.py:59
+msgid "Show a plot of the selected spectrum"
+msgstr "Mostrar un gráfico del espectro seleccionado"
+
+#: ../src/jwsprocessor/selection_page.py:69
+msgid "Dilution data"
+msgstr "Datos de dilución"
+
+#: ../src/jwsprocessor/selection_page.py:72
+msgid "Paste dilution factors"
+msgstr "Pegar factores de dilución"
+
+#: ../src/jwsprocessor/selection_page.py:85
+msgid "Spectra to be processed:"
+msgstr "Espectros a procesar:"
+
+#: ../src/jwsprocessor/selection_page.py:172
+msgid "Name"
+msgstr "Nombre"
+
+#: ../src/jwsprocessor/selection_page.py:173
+msgid "Dilution"
+msgstr "Dilución"
+
+#: ../src/jwsprocessor/selection_page.py:175
+msgid "Point no."
+msgstr "Nº Puntos"
+
+#: ../src/jwsprocessor/selection_page.py:176
+msgid "Initial λ"
+msgstr "λ inicial"
+
+#: ../src/jwsprocessor/selection_page.py:177
+msgid "Final λ"
+msgstr "λ final"
+
+#: ../src/jwsprocessor/selection_page.py:178
+msgid "Data pitch"
+msgstr "Data pitch"
+
+#: ../src/jwsprocessor/selection_page.py:179
+msgid "File path"
+msgstr "Ruta de archivo"
+
+#: ../src/jwsprocessor/smoothing_selection.py:19
+msgid "Choose smoothing type"
+msgstr "Elija el tipo de smoothing"
+
+#: ../src/jwsprocessor/smoothing_selection.py:101
+#: ../src/jwsprocessor/smoothing_selection.py:263
+msgid "No smoothing"
+msgstr "Sin smoothing"
+
+#. head=path; tail=nombre arch.
+#: ../src/jwsprocessor/smoothing_selection.py:153
+#, python-format
+msgid "Showing %s"
+msgstr "Mostrando %s"
+
+#: ../src/jwsprocessor/smoothing_selection.py:285
+msgid "Smoothing level (m):"
+msgstr "Nivel de smoothing (m):"

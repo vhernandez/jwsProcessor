@@ -1,0 +1,8 @@
+#encoding: utf-8
+
+Import('env', 'install', 'install_recursive')
+import glob
+
+# install a file with the installiton paths 
+env.BuildPathConfig('${ETC_PATH}/path.cfg', ['${ROOTPATH}/options.conf', '${ROOTPATH}/SConstruct'])
+

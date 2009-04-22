@@ -1,0 +1,10 @@
+#encoding: utf-8
+
+Import('env', 'install', 'install_recursive', 'win32')
+
+
+from distutils.file_util import copy_file
+copy_file('jwsprocessor.py', 'jwsprocessor')
+
+install('${BIN_PATH}', 'jwsprocessor', 0755)
+
