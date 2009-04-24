@@ -1,3 +1,21 @@
+commit f8485781603bf4c8d6e08658a49391344590694e
+Author: victor <victor@minino.(none)>
+Date:   Fri Apr 24 18:24:31 2009 +0200
+
+    Fix distutils setup.py script
+
+commit c75b58f133186d207784245f0ec747aa9c38e3d8
+Author: victor <victor@minino.(none)>
+Date:   Fri Apr 24 18:19:49 2009 +0200
+
+    Updated cleanup script
+
+commit 245d46d92a481a14b81af9739149ca39a930d234
+Author: victor <victor@minino.(none)>
+Date:   Fri Apr 24 10:26:29 2009 +0200
+
+    Updated ChangeLog for version 0.1.1
+
 commit f87c10e8b26a72b6e9fffbbe908aab970feaabaf
 Author: victor <victor@minino.(none)>
 Date:   Fri Apr 24 10:19:39 2009 +0200
