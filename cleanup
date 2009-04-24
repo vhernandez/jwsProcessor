@@ -14,11 +14,15 @@ import distutils.dir_util
 for base,folders,filenames in os.walk('.'):
 	if '.svn' in base:
 		continue
-    if '.git' in base:
-        continue
+	if '.git' in base:
+		continue
 	for ext in CLEAN:
 		for filename in glob.glob(os.path.join(base, ext)):
 			print "removing "+filename+"..."
 			os.remove(filename)
-distutils.dir_util.remove_tree('share')
+if os.path.isdir('share'):
+	distutils.dir_util.remove_tree('share')
+if os.path.isfile('bin/jwsprocessor'):
+	print "removing bin/jwsprocessor..."
+	os.remove('bin/jwsprocessor')
 
