@@ -1,2 +1,50 @@
+commit f87c10e8b26a72b6e9fffbbe908aab970feaabaf
+Author: victor <victor@minino.(none)>
+Date:   Fri Apr 24 10:19:39 2009 +0200
 
+    Program version defined in file 'VERSION'
 
+commit 5291341496de134acacc2594a6b3701e561e9c82
+Author: victor <victor@minino.(none)>
+Date:   Fri Apr 24 10:16:15 2009 +0200
+
+    Updated README
+
+commit b5d5a3825b5e964648f7dbd77f9aa896f3f985d7
+Author: victor <victor@minino.(none)>
+Date:   Wed Apr 22 21:41:13 2009 +0200
+
+    Prevent the cleanup script from deleting files in '.git' folder
+
+commit 728133308b3bd499937d96714f85c55399816a4f
+Author: victor <victor@minino.(none)>
+Date:   Wed Apr 22 21:38:38 2009 +0200
+
+    - Add png icon as in win32 gtk does not support svg
+    - Fix icon installation in linux
+
+commit 1522ad8e8b5d478b8b4c6da23f755975ea8ca829
+Author: victor <victor@minino.(none)>
+Date:   Wed Apr 22 20:54:31 2009 +0200
+
+    Delete files that shouldn't tracked by git.
+
+commit 7bf86f2ab6f58cca73b09ac276458f60fafef2c8
+Author: victor <victor@minino.(none)>
+Date:   Wed Apr 22 20:51:06 2009 +0200
+
+    Show the correct program title in the first assistant page.
+    Update the Spanish translation accordingly.
+
+commit d7d2acae54b74cc70643c8dc1bb7a8ab2d5de422
+Author: victor <victor@minino.(none)>
+Date:   Wed Apr 22 20:46:03 2009 +0200
+
+    Updates/fixes to the spanish translation.
+
+commit 6c977ea29c6fdc6f2456633c32662a704127f2ea
+Author: victor <victor@minino.(none)>
+Date:   Wed Apr 22 20:42:26 2009 +0200
+
+    Initial commit
+    jwsProcessor version 0.1
