@@ -163,12 +163,9 @@ $ python setup.py bdist_dumb
 
 These two commands will create in dist/ two files:
 
-* source packages: jwsProcessor.<version>.tar.gz
+- jwsProcessor.<version>.tar.gz
 
-* ready-to-run package: jwsProcessor.<version>.win32.zip
-
-Although the ready-to-run packages is contains "win32" it can be run in any
-system.
+- jwsProcessor.<version>.ready_to_run.zip
 
 Scons is used to install the software in any POSIX OS (Linux, BSDs, MacOS,
 Solaris...). I used scons instead of python distutils because distutils is
