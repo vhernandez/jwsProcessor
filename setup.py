@@ -51,6 +51,14 @@ class build_mo (Command):
             self.copy_file(gmo, destfile)
             self.distribution.data_files.append( (destdir, [destfile]))
 
+
+def read_version():
+    f = file("VERSION", "r")
+    v = f.read()
+    f.close()
+    return v.strip()
+
+
 #make sure build_mo is called when the package is built
 import distutils.command.build 
 distutils.command.build.build.sub_commands.append( ('build_mo', None) )
@@ -75,7 +83,7 @@ data_files.extend(mo_catalog)
     
 setup(cmdclass={'build_mo':build_mo},
       name='jwsConverter',
-      version='0.1',
+      version=read_version(),
       description='A program to convert and process Jasco SpectraManager (JWS) files.',
       author='Victor M. Hernandez-Rocamora',
       author_email='victor.hr@gmail.com',

@@ -25,8 +25,13 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #
 
+def read_version():
+    f = file("VERSION", "r")
+    v = f.read()
+    f.close()
+    return v.strip()
 
-VERSION = "0.1"
+VERSION = read_version()
 
 import os, glob, sys, time
 import distutils.sysconfig

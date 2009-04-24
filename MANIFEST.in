@@ -12,6 +12,7 @@ include etc/debugpath.cfg
 
 include pixmaps/SConscript
 include pixmaps/*.svg
+include pixmaps/*.png
 
 include po/LINGUAS
 include po/POTFILES.in
@@ -28,6 +29,7 @@ include ChangeLog
 include cleanup
 include LICENSE
 include README
+include VERSION
 include msgfmt.py
 include SConstruct
 
