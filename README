@@ -5,7 +5,7 @@ Copyright (C) 2007-2009 Víctor M. Hernández-Rocamora
 
 Introduction
 ------------
-jwsProcessor is a graphical tool that allow the conversion and processing of
+jwsProcessor is a graphical tool that allows the conversion and processing of
 JWS files from Jasco SpectraManager(R) software included with Jasco scientific
 machines, like spectropolarimeters, FTIR machines, etc.
 
@@ -141,6 +141,41 @@ molar ellipticity units, etc.).
 Next, the files are processed according to your preferences.
 
 Finally, you can save the results either in a single file or in separate files.
+
+
+Information for developers and packagers
+----------------------------------------
+
+Two build systems are used in jwsprocessor. The python distutils script setup.py
+and scons. The distutils script is used to create source and ready-to-run
+packages. Ready-to-run packages are similar to the source package but it 
+contains the compiled gettext message catalog for localization, so it can be
+readily deployed in any system by simply unpacking the package and runnint the
+jwsprocessor.py file in 'bin/':
+
+To create a source distribution package use:
+
+$ python setup.py sdist
+
+To create a ready-to-run package use:
+
+$ python setup.py bdist_dumb
+
+These two commands will create in dist/ two files:
+
+* source packages: jwsProcessor.<version>.tar.gz
+
+* ready-to-run package: jwsProcessor.<version>.win32.zip
+
+Although the ready-to-run packages is contains "win32" it can be run in any
+system.
+
+Scons is used to install the software in any POSIX OS (Linux, BSDs, MacOS,
+Solaris...). I used scons instead of python distutils because distutils is
+not really prepared for the installation of files outside the python 
+module installation path, though it is really easier than scons.
+That said, you should use scons if you plan to build rpm/deb packages from 
+the sources.
 
 
 License Information
