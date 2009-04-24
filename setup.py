@@ -82,7 +82,7 @@ data_files.extend(mo_catalog)
 
     
 setup(cmdclass={'build_mo':build_mo},
-      name='jwsConverter',
+      name='jwsProcessor',
       version=read_version(),
       description='A program to convert and process Jasco SpectraManager (JWS) files.',
       author='Victor M. Hernandez-Rocamora',
