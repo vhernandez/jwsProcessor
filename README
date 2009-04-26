@@ -177,6 +177,12 @@ the sources.
 
 License Information
 -------------------
+
+This program is distributed under the terms of the GNU General PublicLicense
+(see below) except for the buildtools/msgfmt.py file that is from the Python 2.5
+source distribution which is released under the open source PSF license 
+(see http://www.python.org/download/releases/2.5.4/license/).
+
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
 as published by the Free Software Foundation; either version 2

@@ -1,1 +1,10 @@
+Main author:
+
 Víctor M. Hernández Rocamora <victor.hr@gmail.com>
+
+The SConstruct script is derived from the Aldrin Sconstruct script, which is
+Copyright (C) 2006 The Aldrin Development Team 
+(http://code.google.com/p/aldrin-sequencer/).
+
+The buildtools/msgfmt.py file is from the Python 2.5 source distribution, and 
+its author is Martin v. Löwis <loewis@informatik.hu-berlin.de>.

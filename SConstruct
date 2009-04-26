@@ -170,11 +170,11 @@ def buildinstall_po( source, env):
     gmo = po.replace('.po', '.gmo') 
     print gmo
     msgfmt.make(po, gmo)
-
     
     modir = os.path.join('${LOCALE_PATH}', lang, "LC_MESSAGES")
     moname = '${GETTEXT_PACKAGE}' + ".mo"
     env.InstallAs(os.path.join(modir, moname), gmo)
+
 
 builders = dict(
 	BuildPathConfig = Builder(action = build_path_config),  
