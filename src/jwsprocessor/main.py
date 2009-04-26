@@ -108,6 +108,8 @@ This assistant consists on four steps:
         self.restart_button.show_all()
         # Configure window
         self.set_title("jwsProcessor")
+        self.set_border_width(12)
+        self.set_position (gtk.WIN_POS_CENTER)
         self.set_forward_page_func(self._fwd_page_func)
         self.show_all()
         self.connect("delete-event", self._close_cb)
