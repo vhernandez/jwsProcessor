@@ -1,3 +1,45 @@
+commit 4ace130b94136d1bf18d42373228a40524608411
+Author: victor <victor@minino.(none)>
+Date:   Tue May 12 12:43:05 2009 +0200
+
+    Fix installation issue in Ubuntu 9.04 (Jaunty)
+
+commit 7e1829400588331ac09c61375c14770a74021aa2
+Author: victor <victor@minino.(none)>
+Date:   Sun Apr 26 18:48:47 2009 +0200
+
+    Increase the border in the main window
+
+commit c9d7941f00379583c53f0453f12d1c1c0691200a
+Author: victor <victor@minino.(none)>
+Date:   Sun Apr 26 18:10:52 2009 +0200
+
+    Copyright and license information updated.
+
+commit 11b0ed0bf3814887e0742d559cc95d514128b82d
+Author: victor <victor@minino.(none)>
+Date:   Fri Apr 24 19:22:41 2009 +0200
+
+    Fix the cretion of ready-to-run packages
+
+commit 098d71f22c00a3e051486bf808b06f76f3cedc38
+Author: victor <victor@minino.(none)>
+Date:   Fri Apr 24 19:18:26 2009 +0200
+
+    Updated cleanup script
+
+commit 49f392f13a03e4f4ad399f242bb971e5ad574575
+Author: victor <victor@minino.(none)>
+Date:   Fri Apr 24 19:13:38 2009 +0200
+
+    Added instructions for developers/packagers
+
+commit 18f410275203e84369baa72d33fcf0cdafe66c14
+Author: victor <victor@minino.(none)>
+Date:   Fri Apr 24 18:27:05 2009 +0200
+
+    Updated VERSION and ChangeLog for verson 0.1.2
+
 commit f8485781603bf4c8d6e08658a49391344590694e
 Author: victor <victor@minino.(none)>
 Date:   Fri Apr 24 18:24:31 2009 +0200
