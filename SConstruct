@@ -157,20 +157,20 @@ def install_recursive(target, path, mask):
 			install_recursive(os.path.join(target,filename), fullpath, mask)
 
 def build_path_config(target, source, env):
-	outpath = str(target[0])
-	from StringIO import StringIO
-	from ConfigParser import ConfigParser
-	s = StringIO()
-	cfg = ConfigParser()
-	cfg.add_section('Paths')
-	remove_prefix = '${DESTDIR}'
-	for key, value in CONFIG_PATHS.iteritems():
-		value = env[value]
-		if value.startswith(remove_prefix):
-			value = value[len(remove_prefix):]
-		cfg.set('Paths', key, os.path.abspath(str(env.Dir(value))))
-	cfg.write(s)
-	file(outpath, 'w').write(s.getvalue())
+    outpath = str(target[0])
+    from StringIO import StringIO
+    from ConfigParser import ConfigParser
+    s = StringIO()
+    cfg = ConfigParser()
+    cfg.add_section('Paths')
+    remove_prefix = '${DESTDIR}'
+    for key, value in CONFIG_PATHS.iteritems():
+        value = env[value]
+        if value.startswith(remove_prefix):
+            value = value[len(remove_prefix):]
+        cfg.set('Paths', key, os.path.abspath(str(env.Dir(value))))
+    cfg.write(s)
+    file(outpath, 'w').write(s.getvalue())
 
 # Using this script we don't depend on gettext being installed to build
 # the compiled .mo files.
@@ -178,15 +178,15 @@ def build_path_config(target, source, env):
 sys.path.append("buildtools")
 import msgfmt
 
+Clean('buildtools/msgfmt.pyc', 'buildtools/msgfmt.pyc')
+
 def buildinstall_po( source, env):
     po = str(source)
     lang = os.path.splitext(os.path.basename(po))[0]
-    #gmo = env.Command(po.replace('.po', '.gmo'), po,
-    #               	 "msgfmt -o $TARGET $SOURCE")
     gmo = po.replace('.po', '.gmo') 
-    print gmo
     msgfmt.make(po, gmo)
-    
+    Clean(gmo, gmo)
+
     modir = os.path.join('${LOCALE_PATH}', lang, "LC_MESSAGES")
     moname = '${GETTEXT_PACKAGE}' + ".mo"
     env.InstallAs(os.path.join(modir, moname), gmo)
@@ -197,6 +197,7 @@ builders = dict(
 )
 
 env['BUILDERS'].update(builders)
+
 
 Export(
 	'env', 
