@@ -224,7 +224,6 @@ msgstr ""
 "#4 Guardado de los resultados\n"
 
 #: ../src/jwsprocessor/main.py:64
-#, fuzzy
 msgid "jwsProcessor assistant"
 msgstr "Asistente jwsProcessor"
 
