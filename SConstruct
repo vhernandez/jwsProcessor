@@ -56,21 +56,37 @@ def bool_converter(value):
 		return False
 	return bool(value)
 
-opts = Options( 'options.conf', ARGUMENTS )
-opts.Add("PREFIX", 'Set the install "prefix" ( /path/to/PREFIX )', "/usr/local")
-opts.Add("DESTDIR", 'Set the root directory to install into ( /path/to/DESTDIR )', "")
-opts.Add("ETCDIR", 'Set the configuration dir "prefix" ( /path/to/ETC )', "/etc")
+#opts = Options( 'options.conf', ARGUMENTS )
+opts = Variables('options.conf')
+opts.Add(PathVariable('PREFIX', 
+                      'Set the install "prefix" ( /path/to/PREFIX )', 
+                      '/usr/local'))
+opts.Add(PathVariable("DESTDIR", 
+                      'Set the root directory to install into ( /path/to/DESTDIR )', 
+                      "",
+                      PathVariable.PathAccept))
+opts.Add(PathVariable("ETCDIR", 
+                      'Set the configuration dir "prefix" ( /path/to/ETC )', 
+                      "/etc"))
 
-env = Environment(ENV = os.environ, options=opts, tools=['default','packaging'])
+env = Environment(ENV = os.environ, variables=opts, tools=['default','packaging'])
 
 env.SConsignFile()
 
 ######################################
 # build settings
 ######################################
+# In Ubuntu Jaunty, Python 2.6, modules are installed in 'dist-packages' subdir
+# and 'site-packages' is not in sys.path. get_python_lib() will return  
+# 'site-packages' subdir if prefix is not /usr or /usr/local, which won't be in
+# sys.path.
+# So, we will call get_python_lib() with the prefix already substituted to the
+# final value (with env.subst()) which will return the correct dir if we are
+# installing to /usr or /usr/local.
+_prefix = env.subst('${DESTDIR}${PREFIX}')
 
 env['ROOTPATH'] = os.getcwd()
-env['SITE_PACKAGE_PATH'] = distutils.sysconfig.get_python_lib(prefix="${DESTDIR}${PREFIX}")
+env['SITE_PACKAGE_PATH'] = distutils.sysconfig.get_python_lib(prefix=_prefix)
 env['APPLICATIONS_PATH'] = '${DESTDIR}${PREFIX}/share/applications'
 env['BIN_PATH'] = '${DESTDIR}${PREFIX}/bin'
 env['SHARE_PATH'] = '${DESTDIR}${PREFIX}/share/jwsprocessor'
