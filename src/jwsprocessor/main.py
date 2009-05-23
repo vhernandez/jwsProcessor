@@ -20,6 +20,7 @@ from process_form import ProcessForm
 from options_page import OptionsPage
 from tools import ask_yesno, ProcessOptions, _
 from jws_processing import *
+from jws_filechooser import ff_txt
 
 class JwsAssistant(gtk.Assistant):
 
