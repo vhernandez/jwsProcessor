@@ -141,7 +141,8 @@ This assistant consists on four steps:
         """
         page = self.get_nth_page(self.get_current_page()) 
         print "apply_cb, current_page=", page #debug
-        if page == self.summary_page:
+        #if page == self.summary_page:
+        if page == self.options_page:
             # Check if blank is included in spectra list(?)
             # if it is, then allow the user to re-run the options dialo
             self.options = self.options_page.get_options()
@@ -174,7 +175,8 @@ This assistant consists on four steps:
             self.summary_page.set_message(mensaje, info_buffer, image_type)
             self.set_page_complete(self.summary_page, True)            
 
-        elif page == self.final_page:
+        #elif page == self.final_page:
+        elif page == self.save_options_page:
             # Save files
             print self.save_options_page.get_option() #debug
             save_option = self.save_options_page.get_option()
@@ -336,7 +338,7 @@ def main(debug=False):
     cfgFile = config_load_validate()
 
     # Load the icon for the window; here we just load one, default icon
-    gtk.window_set_default_icon_from_file( imagepath("jwsprocessor.svg") )
+    gtk.window_set_default_icon_from_file( imagepath("jwsprocessor.png") )
 
     app_window = JwsAssistant()
     gtk.main()
