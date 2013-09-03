@@ -34,15 +34,20 @@ JWS_ERROR_ERROR_WRITING_FILE = -5
 # Other globals:
 JWS_Z260_CUTOFF = 0.05
 
-class JwsChannelInfo:
-    def __init__(self, a, b, c, d, e, f):
-        self.channel_type = a
-        self.channel_int = b
-        self.x_min = c
-        self.y_for_x_min = d
-        self.x_max = e
-        self.y_for_x_max = f
+# Custom Exceptions
+class _NotEnoughDataError(Exception):
+    "Raised when not enough data is present in the .JWS file header."
+    pass
+    
+class _WrongFileTypeError(Exception):
+    "Raised when initial 4-bytes does not match the correct values for a .JWS file."
+    pass
 
+class _WrongDataError(Exception):
+    "Raised when wrong data values are present in the .JWS file header."
+    pass
+
+# Classes 
 class JwsHeader:
     def __init__(self, channel_number, point_number, 
                  x_for_first_point, x_for_last_point, x_increment,
@@ -54,15 +59,15 @@ class JwsHeader:
         self.x_increment = x_increment
         #only defined if this is the header of a v1.5 jws file
         self.data_size = data_size
-        
+       
         
 def _unpack_150_jws_header(header_data):    
     if len(header_data) < 0x740:
-        raise Exception, "Ivalid data length!"
+        raise _NotEnoughDataError, "Ivalid data length!"
 
     data_tuple = unpack(JWS_150_HEADER_FORMAT, header_data)
     if data_tuple[0] != JWS_MAGIC_BYTES:
-        raise Exception, "This is not a .JWS file, four magic bytes are not valid."
+        raise _WrongFileTypeError, "This is not a .JWS file, four magic bytes are not valid."
 
     # Check if header data is correct:        
     channel_number = data_tuple[2]
@@ -70,7 +75,7 @@ def _unpack_150_jws_header(header_data):
     data_size = data_tuple[12]
     predicted_data_size = channel_number*point_number*4
     if data_size != predicted_data_size:
-        raise Exception, "Predicted channel data length does not match with stored value."
+        raise _WrongDataError, "Predicted channel data length does not match with stored value."
 
     # Fill rest of the header records
     x_for_first_point = data_tuple[4]
@@ -82,7 +87,7 @@ def _unpack_150_jws_header(header_data):
 
 def _unpack_ole_jws_header(data):
     if len(data) < 96:
-        raise Exception, "DataInfo should be at least 96 bytes!"
+        raise _NotEnoughDataError, "DataInfo should be at least 96 bytes!"
     data_tuple = unpack(DATAINFO_FMT, data)
     # I have only found spectra files with 1 channel
     # So we will only support 1 channel per file, at the moment
@@ -90,65 +95,41 @@ def _unpack_ole_jws_header(data):
                      data_tuple[6], data_tuple[7], data_tuple[8])
 
 
-def _read_150_header(fn):
+def _read_150_header(f):
     ''' Open file and read its header (first 0x740 bytes). 
-        Returns a JwsHeader150 object if the file is a valid JWS file v1.50.
+        Returns a JwsHeader object if the file is a valid JWS file v1.50.
         Returns None if the couldn't open the file, of it is not a valid JWS.
     '''
-    try:
-        # In Windows the 'b'(binary) flag is necessary !!
-        f = file(fn, 'rb')
-        data = f.read(0x740)
-        f.close()
-    except Exception, msg:
-        print "jwslib.read_header():", msg
-        return None
-        
-    # Check file length:
-    if len(data) < 0x740:
-        print "jwslib.read_header(): Invalid file, file too small."
-        return None
-        
-    # Read and check header:
-    header_data = data[:0x740]
-    try:
-        header = JwsHeader150_mini(header_data)
-    except Exception, msg:
-        print "jwslib.read_header():", msg
-        return None
-    return header
-
-def _read_150_header(f):
     try:
         f.seek(0)
         header_data = f.read(0x740)
         f.close()
-    except Exception, msg:        
+    except IOError as msg:        
         return None, msg
     try:
         header_obj = _unpack_150_jws_header(header_data)
-    except Exception, msg:        
-        return None, msg          
+    except (_WrongFileTypeError, _NotEnoughDataError, _WrongDataError) as msg:        
+        return None, msg
     return header_obj, None
     
 def _read_ole_header(f):
     try:
         f.seek(0)
         oleobj = ofio.OleFileIO(f)
-    except Exception, msg:        
+    except IOError as msg:        
         return None, msg
     if oleobj.exists('DataInfo'):
         try:
             str = oleobj.openstream('DataInfo')
             header_data = str.read()
             f.close()
-        except Exception, msg:            
+        except IOError as msg:            
             return None, msg
     else:
         return None, "Invalid JWS OLE file."        
     try:
         header_obj = _unpack_ole_jws_header(header_data)
-    except Exception, msg:        
+    except _NotEnoughDataError as msg:        
         return None, msg
     return header_obj, None
 
@@ -187,7 +168,7 @@ def _read_ole_file(data):
     f = StringIO.StringIO(data)
     try:
         doc = ofio.OleFileIO(f)
-    except Exception, msg:
+    except IOError as msg:
         print "_read_ole_file():", msg
         return (JWS_ERROR_INVALID_FILE, msg)
 
@@ -195,7 +176,7 @@ def _read_ole_file(data):
         try:
             str = doc.openstream('DataInfo')
             header_data = str.read()
-        except Exception, msg:            
+        except IOError as msg:            
             print "_read_ole_file():", msg
             return (JWS_ERROR_INVALID_FILE, msg)
     else:
@@ -203,7 +184,7 @@ def _read_ole_file(data):
         return (JWS_ERROR_INVALID_FILE, "Invalid JWS OLE file.")
     try:
         header_obj = _unpack_ole_jws_header(header_data)
-    except Exception, msg:
+    except IOError as msg:
         print "_read_ole_file():", msg
         return (JWS_ERROR_INVALID_FILE, msg)
         
@@ -213,7 +194,7 @@ def _read_ole_file(data):
         try:
             str = doc.openstream('Y-Data')
             ydata = str.read()
-        except Exception, msg:
+        except IOError as msg:
             return (JWS_ERROR_INVALID_FILE, "Could not read Y-Data.")
      
         if len(ydata) != header_obj.point_number*4:
@@ -235,7 +216,7 @@ def _read_150_file(data):
     header_data = data[:0x740]
     try:
         header = _unpack_150_jws_header(header_data)
-    except Exception, msg:        
+    except (_WrongFileTypeError, _NotEnoughDataError, _WrongDataError) as msg:        
         return (JWS_ERROR_INVALID_FILE,msg)
     # Read channel data:    
     channel_data = data[0x740:]
@@ -270,7 +251,7 @@ def read_file(fn):
         f = file(fn, 'rb')
         data = f.read()
         f.close()
-    except Exception, msg:
+    except IOError as msg:
         return (JWS_ERROR_COULD_NOT_READ_FILE, msg)
         
     if len(data) < 4:
@@ -297,7 +278,7 @@ def dump_channel_data(fn, header, channels):
     # Open the file to read
     try:
         f = open(fn, "w")
-    except Exception, msg:
+    except IOError as msg:
         return (JWS_ERROR_COULD_NOT_CREATE_FILE, msg)
     # Write channel data to 
     x = header.x_for_first_point
