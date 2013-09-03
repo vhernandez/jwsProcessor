@@ -10,6 +10,7 @@ import pygtk
 pygtk.require("2.0")
 import gtk
 import gobject
+import glib
 import os
 import gettext
 from def_config import *
@@ -338,8 +339,12 @@ def main(debug=False):
     cfgFile = config_load_validate()
 
     # Load the icon for the window; here we just load one, default icon
-    gtk.window_set_default_icon_from_file( imagepath("jwsprocessor.png") )
-
+    try:
+        gtk.window_set_default_icon_from_file( imagepath("jwsprocessor.svg") )
+    except glib.GError:
+        gtk.window_set_default_icon_from_file( imagepath("jwsprocessor.png") )
+    
+        
     app_window = JwsAssistant()
     gtk.main()
     
