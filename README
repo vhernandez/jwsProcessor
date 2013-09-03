@@ -1,6 +1,6 @@
 jwsProcessor
 A program to convert and process Jasco SpectraManager (JWS) files.
-Copyright (C) 2007-2009 Víctor M. Hernández-Rocamora
+Copyright (C) 2007-2013 Víctor M. Hernández-Rocamora
 
 
 Introduction
@@ -24,7 +24,7 @@ or without column headers.
 
 Requirements
 ------------
-- Python 2.x (2.4+ required): http://www.python.org
+- Python 2.x (2.6+ required): http://www.python.org
 - numpy: http://numpy.scipy.org/
 - scipy: http://www.scipy.org/
 - matplotlib: http://matplotlib.sourceforge.net/
