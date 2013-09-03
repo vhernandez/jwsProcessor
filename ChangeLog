@@ -1,3 +1,81 @@
+commit 3c807e0b0a2f328442ee4fc35377fa891c7c3fb7
+Author: victor <victor.hr@gmail.com>
+Date:   Tue Sep 3 19:57:13 2013 +0200
+
+    Update AUTHORS to include copyright info about OleFileIO_PL.py
+
+commit 592990fb0ea7ea3aa3459bfff98dfc940ad2490b
+Author: victor <victor.hr@gmail.com>
+Date:   Tue Sep 3 19:56:40 2013 +0200
+
+    Update python version requirements and copyright notice date
+
+commit 44bf4390f1c862c019d89fc2a9265668ed940971
+Author: victor <victor.hr@gmail.com>
+Date:   Tue Sep 3 19:44:56 2013 +0200
+
+    Better error handling in jwslib.py
+
+commit d788e17764c6c7cd528568960a2918e038e8884f
+Author: victor <victor.hr@gmail.com>
+Date:   Tue Sep 3 19:44:08 2013 +0200
+
+    More elegant handling of the lack of SVG support
+
+commit 55d82669760b3f171b9c4337996debd45861899d
+Author: victor <victor.hr@gmail.com>
+Date:   Fri Aug 30 19:17:21 2013 +0200
+
+    Initial support for new OLE jws file format
+
+commit 6c90ac58fccf030115f82990228e2a3e1addb929
+Author: victor <victor.hr@gmail.com>
+Date:   Fri Aug 30 19:12:28 2013 +0200
+
+    Fix SVG unsupported in Windows and OSX. Fix changes in gtk.Assistant behavior in recent Gtk
+
+commit 01bff265d6fa963dcbbd986fe6a7193a47bd19dc
+Author: victor <victor@minino.(none)>
+Date:   Sat May 23 09:00:16 2009 +0200
+
+    Fix saving results
+
+commit 70f66251a9f3d1ad46f05cf8bfdd6a9a0095cd4f
+Author: victor <victor@minino.(none)>
+Date:   Thu May 14 22:04:38 2009 +0200
+
+    Ignore MANIFEST
+
+commit 134040d5529c445594fc5782f0f0b7917ed9329b
+Author: victor <victor@minino.(none)>
+Date:   Thu May 14 22:02:46 2009 +0200
+
+    Ignore .sconsign.dblite
+
+commit 22828f24ac6c2f107a5a5dcc69a0c9ff924589ed
+Author: victor <victor@minino.(none)>
+Date:   Wed May 13 13:34:40 2009 +0200
+
+    cleaning extra files with scons -c
+
+commit 0130ff144f82aa8382fb37d981fd7d6c81f269f8
+Author: victor <victor@minino.(none)>
+Date:   Wed May 13 12:59:10 2009 +0200
+
+    Fixed Spanish translation
+
+commit d63b997264f4696b6cd18b568e9bb3045eb34188
+Author: victor <victor@minino.(none)>
+Date:   Wed May 13 12:56:02 2009 +0200
+
+    More elegant fix for installation with scons in Ubuntu 9.04(Jaunty).
+
+commit a5a18548b3676e28c6e458587c06efb9b13db3bf
+Author: victor <victor@minino.(none)>
+Date:   Tue May 12 12:50:44 2009 +0200
+
+    Updated VERSION and ChangeLog for version 0.1.3
+
 commit 4ace130b94136d1bf18d42373228a40524608411
 Author: victor <victor@minino.(none)>
 Date:   Tue May 12 12:43:05 2009 +0200
