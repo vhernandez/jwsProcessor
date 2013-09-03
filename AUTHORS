@@ -2,6 +2,13 @@ Main author:
 
 Víctor M. Hernández Rocamora <victor.hr@gmail.com>
 
+The OleFileIO_PL library (src/jwsprocessor/OleFileIO_PL.py) is an improved 
+version of the OleFileIO module from the Python Imaging Library (PIL).
+OleFileIO_PL changes are Copyright (c) 2005-2013 by Philippe Lagadec
+The Python Imaging Library (PIL) is
+    Copyright (c) 1997-2005 by Secret Labs AB
+    Copyright (c) 1995-2005 by Fredrik Lundh
+
 The SConstruct script is derived from the Aldrin Sconstruct script, which is
 Copyright (C) 2006 The Aldrin Development Team 
 (http://code.google.com/p/aldrin-sequencer/).
