@@ -1,12 +1,12 @@
 #!/usr/bin/env python
-# -*- coding: UTF8 -*-
+# -*- coding: UTF-8 -*-
 import pygtk
 pygtk.require("2.0")
 import gtk
 import os
 import jwslib
 import gettext
-from numpy.oldnumeric import array, arange, Float
+from numpy import array, arange
 
 #gettext
 _ = gettext.gettext

@@ -8,7 +8,7 @@ from matplotlib.axes import Subplot
 from matplotlib.figure import Figure
 # backend para matplotlib, por defecto gtkagg
 from matplotlib.backends.backend_gtk import FigureCanvasGTK as FigureCanvas
-from numpy.oldnumeric import array, arange, Float
+from numpy import array, arange
 from tools import _
 
 # Estructuras ------------------------------------------------------------------
@@ -52,7 +52,7 @@ class JwsFileChooserDialog(gtk.FileChooserDialog):
             xdata = arange(header.x_for_first_point,                  #start
                            header.x_for_last_point+header.x_increment,#end+incr.
                            header.x_increment)                        #increment
-            ellipticity = array(channels[0], Float)
+            ellipticity = array(channels[0], 'd')
             self.figure.clear()
             p = self.figure.add_subplot(111)
             p.plot( xdata, ellipticity)
