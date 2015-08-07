@@ -8,7 +8,7 @@ from matplotlib.axes import Subplot
 from matplotlib.figure import Figure
 # backend para matplotlib, por defecto gtkagg
 from matplotlib.backends.backend_gtk import FigureCanvasGTK as FigureCanvas
-from numpy import array, arange
+from numpy import array, arange, float32
 from tools import _
 
 # Estructuras ------------------------------------------------------------------
@@ -41,22 +41,23 @@ class JwsFileChooserDialog(gtk.FileChooserDialog):
 
     def _update_preview_cb(self, widget):
         input_fn = self.get_preview_filename()
-        results = jwslib.read_file(input_fn)
         error = True
-        if results[0] == jwslib.JWS_ERROR_SUCCESS:
-            header = results[1]                
-            channels = results[2]
-            if len(channels) > 0:
-                error = False
-        if not error:                            
-            xdata = arange(header.x_for_first_point,                  #start
-                           header.x_for_last_point+header.x_increment,#end+incr.
-                           header.x_increment)                        #increment
-            ellipticity = array(channels[0], 'd')
-            self.figure.clear()
-            p = self.figure.add_subplot(111)
-            p.plot( xdata, ellipticity)
-            self.canvas.draw()
+        if input_fn is not None:
+            results = jwslib.read_file(input_fn)
+            if results[0] == jwslib.JWS_ERROR_SUCCESS:
+                header = results[1]                
+                channels = results[2]
+                if len(channels) > 0:
+                    error = False
+            if not error:                            
+                xdata = arange(header.x_for_first_point,                  #start
+                               header.x_for_last_point+header.x_increment,#end+incr.
+                               header.x_increment)                        #increment
+                ellipticity = array(channels[0], float32)
+                self.figure.clear()
+                p = self.figure.add_subplot(111)
+                p.plot( xdata, ellipticity)
+                self.canvas.draw()
         self.set_preview_widget_active(not error)
 
 if __name__=="__main__":        
