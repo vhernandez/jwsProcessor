@@ -8,7 +8,7 @@ import pygtk
 pygtk.require("2.0")
 import gtk
 import os
-from numpy.oldnumeric import array, arange, Float
+from numpy import array, arange, float32
 import pysmoothing
 import jwslib
 from tools import ProcessOptions, _
@@ -29,7 +29,7 @@ class SmoothingSelectionDialog(gtk.Dialog):
         self.xdata = arange(header.x_for_first_point,                    #start
                             header.x_for_last_point+header.x_increment,  #end+incr.
                             header.x_increment)                          #increment
-        self.ellipticity = array(self.channels[0], Float)
+        self.ellipticity = array(self.channels[0], float32)
         
         self._create_widgets()
         self._configure_widgets()
@@ -192,7 +192,7 @@ class ShowSpectrumPanel(gtk.VBox):
         self.xdata = arange(header.x_for_first_point,                    #start
                             header.x_for_last_point+header.x_increment,  #end+incr.
                             header.x_increment)                          #increment
-        self.ellipticity = array(self.channels[0], Float)
+        self.ellipticity = array(self.channels[0], float32)
         
         self._configure_widgets()
         self._plot_spectrum()
